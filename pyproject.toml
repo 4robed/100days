@@ -1,0 +1,43 @@
+[tool.poetry]
+name = "100days"
+version = "0.1.0"
+description = ""
+authors = ["hungnd"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+ipykernel = "^6.29.4"
+jupyter = "^1.0.0"
+pre-commit = "^3.7.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 80
+skip-string-normalization = 1
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+    \.toml
+    \.yaml
+    \.yml
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 80
+skip_gitignore = true
